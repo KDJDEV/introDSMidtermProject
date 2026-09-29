@@ -58,7 +58,6 @@ plt.xlabel("Harmonic vocabulary entropy (bits)")
 plt.ylabel("Number of compositions")
 plt.title("Harmonic vocabulary diversity: Bach vs. Tchaikovsky")
 plt.legend()
-plt.tight_layout()
 plt.savefig("bach_tchaikovsky_harmonic_entropy.png")
 #plt.show()
 
@@ -70,7 +69,6 @@ data = [
 plt.boxplot(data, labels=["Bach", "Tchaikovsky"], showfliers=False)
 plt.ylabel("Distinct pitch-class sets per composition")
 plt.title("Harmonic vocabulary size: Bach vs. Tchaikovsky")
-plt.tight_layout()
 plt.savefig("bach_tchaikovsky_harmonic_vocabulary.png")
 #plt.show()
 
@@ -92,7 +90,7 @@ plt.axvline(0, linewidth=1)
 plt.xlabel("Tchaikovsky proportion − Bach proportion (percentage points)")
 plt.ylabel("Pitch-class set (NormalForm)")
 plt.title("Pitch-class sets that distinguish Tchaikovsky from Bach")
-plt.tight_layout()
+
 plt.savefig("bach_tchaikovsky_distinctive_sonorities.png")
 #plt.show()
 
@@ -104,15 +102,10 @@ data = [
 plt.boxplot(data, labels=["Bach", "Tchaikovsky"], showfliers=True)
 plt.ylabel("Events containing a semitone pair (%)")
 plt.title("Chromatic sonority rate: Bach vs. Tchaikovsky")
-plt.tight_layout()
+
 plt.savefig("bach_tchaikovsky_chromatic_rate.png")
 #plt.show()
 
-print("Saved plots:")
-print("bach_tchaikovsky_harmonic_entropy.png")
-print("bach_tchaikovsky_harmonic_vocabulary.png")
-print("bach_tchaikovsky_distinctive_sonorities.png")
-print("bach_tchaikovsky_chromatic_rate.png")
 print("\nPiece counts:")
 print(piece_stats.groupby("composer").size())
 print("\nMedians:")
